@@ -2,6 +2,24 @@
 
 \maketitle
 
+\begin{figure}
+  \begin{center}
+    \begin{tabular}{|c|c|}
+      \hline
+      \multicolumn{2}{c}{\href{https://en.wikipedia.org/wiki/List\_of\_Linux\_audio\_software}{Linux Audio Applications}} \\
+      \hline
+      \href{https://jackaudio.org/}{JACK} & \href{https://www.freedesktop.org/wiki/Software/PulseAudio/}{Pulse Audio} \\
+      \hline
+      \multicolumn{2}{c}{\href{https://www.alsa-project.org}{ALSA}} \\
+      \hline
+      \multicolumn{2}{c}{\href{https://www.alsa-project.org/wiki/Matrix:Main}{Sound hardware}} \\
+      \hline
+    \end{tabular}
+  \end{center}
+  \caption{The Linux Audio (problably partial) Stack.}
+  \label{fig:stack}
+\end{figure}
+
 Like PulseAudio, \href{http://jackaudio.org/}{JACK} (JACK Audio
 Connection Kit) \cite{letz2005jack} is sound server that proxies
 between the audio applications (that must use JACK) and ALSA. JACK is
