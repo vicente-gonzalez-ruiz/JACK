@@ -1,15 +1,15 @@
-<!DOCTYPE html> 
-<html> 
-<head> <title>JACK (JACK Audio Connection Kit) and related tools</title> 
-<meta charset="UTF-8" /> 
-<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" 
+"http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd" > 
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>JACK &#x0028;JACK Audio Connection Kit&#x0029; and related tools</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (https://tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (https://tug.org/tex4ht/)" /> 
+<!-- xhtml,mathml,html --> 
+<meta name="src" content="index.tex" /> 
 <link rel="stylesheet" type="text/css" href="index.css" /> 
-<script type="text/javascript" 
-src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" 
-></script> 
-<style type="text/css"> 
-.MathJax_MathML {text-indent: 0;} 
-</style> 
 </head><body 
 >
    <div class="maketitle">
@@ -23,972 +23,138 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
 
                                                                   
 
-<h2 class="titleHead">JACK (JACK Audio Connection Kit) and
+<h2 class="titleHead">JACK &#x0028;JACK Audio Connection Kit&#x0029; and
 related tools</h2>
- <div class="author" ><span 
+ <div class="author" ><a 
+href="https://cms.ual.es/UAL/personas/persona.htm?id=515256515553484875" ><span 
 class="ecrm-1200">Vicente Gonz</span><span 
-class="ecrm-1200">á</span><span 
-class="ecrm-1200">lez Ruiz</span></div><br />
+class="ecrm-1200">&#x00E1;</span><span 
+class="ecrm-1200">lez Ruiz</span></a> <span 
+class="ecrm-1200">- </span><a 
+href="https://cms.ual.es/UAL/universidad/departamentos/informatica/index.htm" ><span 
+class="ecrm-1200">Depto Inform</span><span 
+class="ecrm-1200">&#x00E1;</span><span 
+class="ecrm-1200">tica</span></a> <span 
+class="ecrm-1200">- </span><a 
+href="https://www.ual.es" ><span 
+class="ecrm-1200">UAL</span></a></div><br />
 <div class="date" ><span 
-class="ecrm-1200">May 30, 2018</span></div>
+class="ecrm-1200">March 14, 2022</span></div>
                                                                   
 
                                                                   
    </div>
+<!--l. 5--><p class="indent" >   Like PulseAudio, <a 
+href="http://jackaudio.org/" >JACK</a> &#x0028;JACK Audio Connection Kit&#x0029; <span class="cite">&#x005B;<a 
+href="#Xletz2005jack">1</a>&#x005D;</span> is sound server that
+proxies between the audio applications &#x0028;that must use JACK&#x0029; and ALSA.
+JACK is the right choice if latency is important for you because it can be
+con&#xFB01;gured. Another interesting feature of JACK is that allows to de&#xFB01;ne the
+connections &#x0028;audio &#xFB02;ows&#x0029; between JACK-client applications &#x0028;like in a real
+mixer desk&#x0029;. Finally, if you use MIDI apps and/or MIDI hardware, rely on
+JACK.
+</p><!--l. 14--><p class="indent" >   All the functionality of JACK can be get through running <a 
+href="https://qjackctl.sourceforge.io/" >QjackCtl</a>:
+                                                                  
+
+                                                                  
+</p>
+   <pre class="verbatim" id="verbatim-1">
+qjackctl&#x00A0;&#x0026;
+</pre>
+<!--l. 18--><p class="nopar" > that is a GUI for con&#xFB01;guring the JACK server parameters and de&#xFB01;ne the audio
+&#xFB02;ows. Usually, the following options are available:
+     </p><ol  class="enumerate1" >
+<li 
+  class="enumerate" id="x1-3x1">
+     <!--l. 21--><p class="noindent" ><span 
+class="ectt-1000">Start: </span>the server.
+     </p></li>
+<li 
+  class="enumerate" id="x1-5x2">
+     <!--l. 22--><p class="noindent" ><span 
+class="ectt-1000">Stop: </span>the server.
+     </p></li>
+<li 
+  class="enumerate" id="x1-7x3">
+     <!--l. 23--><p class="noindent" ><span 
+class="ectt-1000">Quit: </span>kill the server.
+     </p></li>
+<li 
+  class="enumerate" id="x1-9x4">
+     <!--l. 24--><p class="noindent" ><span 
+class="ectt-1000">Messages: </span>from the server.
+     </p></li>
+<li 
+  class="enumerate" id="x1-11x5">
+     <!--l. 25--><p class="noindent" ><span 
+class="ectt-1000">Session: </span>show/hide the session manager window.
+     </p></li>
+<li 
+  class="enumerate" id="x1-13x6">
+     <!--l. 26--><p class="noindent" ><span 
+class="ectt-1000">Setup: </span>the server.
+     </p></li>
+<li 
+  class="enumerate" id="x1-15x7">
+     <!--l. 27--><p class="noindent" ><span 
+class="ectt-1000">Connect: </span>the audio applications. <a 
+href="http://www.rncbc.org/drupal/node/76" >Notice that</a> all connections made in the
+     Connections interface are kept as long you don&#x2019;t power-cycle the JACK
+     server &#x0028;jackd&#x0029;. That is, all connections will be lost when the JACK server
+     or any of the client application programs are closed or terminated.
+                                                                  
+
+                                                                  
+     </p></li>
+<li 
+  class="enumerate" id="x1-17x8">
+     <!--l. 33--><p class="noindent" ><span 
+class="ectt-1000">Patchbay: </span>will keep all declared connections automatically, as long as
+     QjackCtl  is  kept  alive.  Moreover,  you  can  declare  typical  connection
+     con&#xFB01;guration that are carried out when the related clients are executed.
+     </p></li>
+<li 
+  class="enumerate" id="x1-19x9">
+     <!--l. 37--><p class="noindent" >Play: start transport <a 
+href="https://jackaudio.org/api/group__MIDIAPI.html" >timming events</a>.
+     </p></li>
+<li 
+  class="enumerate" id="x1-21x10">
+     <!--l. 40--><p class="noindent" >Pause: stop transport timming events.
+     </p></li>
+<li 
+  class="enumerate" id="x1-23x11">
+     <!--l. 41--><p class="noindent" >Forward: transport timming events.
+     </p></li>
+<li 
+  class="enumerate" id="x1-25x12">
+     <!--l. 42--><p class="noindent" >Backward: transport timming event.
+     </p></li>
+<li 
+  class="enumerate" id="x1-27x13">
+     <!--l. 43--><p class="noindent" >Rewind: transport timming event.</p></li></ol>
+   <h3 class="sectionHead"><span class="titlemark">0.1   </span> <a 
+ id="x1-10000.1"></a>Resources</h3>
                                                                   
 
                                                                   
    <h2 class="likechapterHead"><a 
- id="x1-1000"></a>Contents</h2> <div class="tableofcontents">
-   <span class="chapterToc" >1 <a 
-href="#x1-20001" id="QQ2-1-2">The server</a></span>
-<br />    <span class="sectionToc" >1.1 <a 
-href="#x1-30001.1" id="QQ2-1-3">What is JACK?</a></span>
-<br />    <span class="sectionToc" >1.2 <a 
-href="#x1-40001.2" id="QQ2-1-4">Functions</a></span>
-<br />    <span class="sectionToc" >1.3 <a 
-href="#x1-50001.3" id="QQ2-1-5">Installation</a></span>
-<br />    <span class="sectionToc" >1.4 <a 
-href="#x1-60001.4" id="QQ2-1-6">JACK graphical front-end: qjackctl</a></span>
-<br />     <span class="subsectionToc" >1.4.1 <a 
-href="#x1-70001.4.1" id="QQ2-1-7">Server conﬁguration</a></span>
-<br />    <span class="sectionToc" >1.5 <a 
-href="#x1-80001.5" id="QQ2-1-8">Minimizing the number of XRUNs</a></span>
-<br />   <span class="chapterToc" >2 <a 
-href="#x1-90002" id="QQ2-1-9">Living with PulseAudio</a></span>
-<br />    <span class="sectionToc" >2.1 <a 
-href="#x1-100002.1" id="QQ2-1-10">What is Pulseaudio?</a></span>
-<br />    <span class="sectionToc" >2.2 <a 
-href="#x1-110002.2" id="QQ2-1-11">Functions</a></span>
-<br />    <span class="sectionToc" >2.3 <a 
-href="#x1-120002.3" id="QQ2-1-12">Daemon control</a></span>
-<br />    <span class="sectionToc" >2.4 <a 
-href="#x1-130002.4" id="QQ2-1-13">Pulseaudio and ALSA tools</a></span>
-<br />    <span class="sectionToc" >2.5 <a 
-href="#x1-140002.5" id="QQ2-1-14">Bypassing PA server (and JACK)</a></span>
-<br />    <span class="sectionToc" >2.6 <a 
-href="#x1-150002.6" id="QQ2-1-15">Sound system usage</a></span>
-<br />    <span class="sectionToc" >2.7 <a 
-href="#x1-160002.7" id="QQ2-1-16">Conﬁguration</a></span>
-<br />    <span class="sectionToc" >2.8 <a 
-href="#x1-170002.8" id="QQ2-1-17">Volume control</a></span>
-<br />    <span class="sectionToc" >2.9 <a 
-href="#x1-180002.9" id="QQ2-1-18">Module <span 
-class="ectt-1000">pulseaudio-module-jack</span></a></span>
-<br />   <span class="chapterToc" >3 <a 
-href="#x1-190003" id="QQ2-1-19">Media players</a></span>
-<br />    <span class="sectionToc" >3.1 <a 
-href="#x1-200003.1" id="QQ2-1-20">Media player: MPlayer</a></span>
-<br />   <span class="chapterToc" >4 <a 
-href="#x1-210004" id="QQ2-1-21">Meters</a></span>
-<br />    <span class="sectionToc" >4.1 <a 
-href="#x1-220004.1" id="QQ2-1-22">A VU (Volume Unit) meter: meterbridge</a></span>
-<br />    <span class="sectionToc" >4.2 <a 
-href="#x1-230004.2" id="QQ2-1-23">Japa (JACK Perceptual Analyzer)</a></span>
-<br />   <span class="chapterToc" >5 <a 
-href="#x1-240005" id="QQ2-1-24">Eﬀects</a></span>
-<br />    <span class="sectionToc" >5.1 <a 
-href="#x1-250005.1" id="QQ2-1-25">JAMin (JACK Audio Mastering interface)</a></span>
-<br />    <span class="sectionToc" >5.2 <a 
-href="#x1-260005.2" id="QQ2-1-26">JACK Rack</a></span>
-<br />    <span class="sectionToc" >5.3 <a 
-href="#x1-270005.3" id="QQ2-1-27">Rakarrack</a></span>
-<br />    <span class="sectionToc" >5.4 <a 
-href="#x1-280005.4" id="QQ2-1-28">Freqtweak</a></span>
-<br />    <span class="sectionToc" >5.5 <a 
-href="#x1-290005.5" id="QQ2-1-29">FMIT (Free Music Instrument Tuner)</a></span>
-<br />   <span class="chapterToc" >6 <a 
-href="#x1-300006" id="QQ2-1-30">Edition</a></span>
-<br />    <span class="sectionToc" >6.1 <a 
-href="#x1-310006.1" id="QQ2-1-31">Audacity: capture and edit audio</a></span>
-<br />   <span class="chapterToc" >7 <a 
-href="#x1-320007" id="QQ2-1-32">Capture</a></span>
-<br />    <span class="sectionToc" >7.1 <a 
-href="#x1-330007.1" id="QQ2-1-33">JACK Timemachine: capture audio</a></span>
-<br />   <span class="chapterToc" >8 <a 
-href="#x1-340008" id="QQ2-1-34">Synthesis</a></span>
-<br />    <span class="sectionToc" >8.1 <a 
-href="#x1-350008.1" id="QQ2-1-35">The Hydrogen drum machine</a></span>
-<br />    <span class="sectionToc" >8.2 <a 
-href="#x1-360008.2" id="QQ2-1-36">ZynAddSubFX</a></span>
-<br />    <span class="sectionToc" >8.3 <a 
-href="#x1-370008.3" id="QQ2-1-37">TiMidity</a></span>
-                                                                  
-
-                                                                  
-<br />    <span class="sectionToc" >8.4 <a 
-href="#x1-380008.4" id="QQ2-1-38">JACK Keyboard and AMSynth</a></span>
-<br />   <span class="chapterToc" >9 <a 
-href="#x1-390009" id="QQ2-1-39">Remember</a></span>
+ id="x1-20000.1"></a>Bibliography</h2>
+   <div class="thebibliography">
+   <p class="bibitem" ><span class="biblabel">
+ &#x005B;1&#x005D;<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
+ id="Xletz2005jack"></a>St&#x00E9;phane Letz, Yann Orlarey, and Dominique Fober. Jack audio server
+   for multi-processor machines. In <span 
+class="ecti-1000">International Computer Music Conference</span>,
+   pages 1&#x2013;4, 2005.
+</p>
    </div>
-                                                                  
-
-                                                                  
-   <h2 class="chapterHead"><span class="titlemark">Chapter 1</span><br /><a 
- id="x1-20001"></a>The server</h2>
-   <h3 class="sectionHead"><span class="titlemark">1.1   </span> <a 
- id="x1-30001.1"></a>What is <a 
-href="http://jackaudio.org/" >JACK</a>?</h3>
-     <ul class="itemize1">
-     <li class="itemize">JACK is a sound system (audio server) for POSIX operating systems (such
-     as Linux, FreeBSD, MacOS X and Windows XP).
-     </li>
-     <li class="itemize">It is a software layer between the kernel (ALSA) and the applications that
-     requires to access to the sound hardware.
-     </li>
-     <li class="itemize">Licensed under <a 
-href="https://www.gnu.org/licenses/lgpl.html" >LGPL</a>.</li></ul>
-<!--l. 20--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">1.2   </span> <a 
- id="x1-40001.2"></a>Functions</h3>
-     <ul class="itemize1">
-     <li class="itemize">Controllable latency (suitable real-time audio applications).
-     </li>
-     <li class="itemize">Allow  to  deﬁne  the  connections  (audio  ﬂows)  between  JACK-client
-     applications (like in a real mixer desk).
-     </li>
-     <li class="itemize"><a 
-href="http://www.linuxjournal.com/node/1004080" >Transport control synchronization.</a> JACK can send timming events (using
-     the JACK transport control system) to the rest of clients in order to
-     synchronize them.
-     </li>
-     <li class="itemize"><a 
-href="http://en.wikipedia.org/wiki/MIDI" >MIDI</a> capabilities.</li></ul>
-<!--l. 36--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">1.3   </span> <a 
- id="x1-50001.3"></a>Installation</h3>
-<!--l. 39--><p class="noindent" >
-                                                                  
-
-                                                                  
-     </p><ol  class="enumerate1" >
-     <li 
-  class="enumerate" id="x1-5002x1">Install the program <span 
-class="ectt-1000">qjackctl</span>. This a graphical front-end for controlling
-     the audio server <span 
-class="ectt-1000">jackd2</span>. During the installation of <span 
-class="ectt-1000">jackd </span>you must decide
-     to enable the realtime process priority (necesarry for real-time processing
-     in slow systems). The priority is deﬁned in the ﬁle:
-                                                                  
-
-                                                                  
-     <div class="verbatim" id="verbatim-1">
-     $ cat /etc/security/limits.d/audio.conf
-      <br /># Provided by the jackd package.
-      <br />#
-      <br /># Changes to this file will be preserved.
-      <br />#
-      <br /># If you want to enable/disable realtime permissions, run
-      <br />#
-      <br />#    dpkg-reconfigure -p high jackd
-      <br />
-      <br />@audio   -  rtprio     95
-      <br />@audio   -  memlock    unlimited
-      <br />#@audio   -  nice      -19
-</div>
-     <!--l. 74--><p class="nopar" >
-</p>
-     </li></ol>
-<!--l. 129--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">1.4   </span> <a 
- id="x1-60001.4"></a>JACK graphical front-end: <a 
-href="http://qjackctl.sourceforge.net/" >qjackctl</a></h3>
-     <ul class="itemize1">
-     <li class="itemize">Provides a simple GUI dialog for setting several JACK daemon parameters,
-     which are properly saved between sessions, and a way control of the status of
-     the audio server daemon. Run it with:
-                                                                  
-
-                                                                  
-     <div class="verbatim" id="verbatim-2">
-     $ qjackctl &#x0026;
-</div>
-     <!--l. 138--><p class="nopar" > </p>
-     <div class="center" 
->
-<!--l. 139--><p class="noindent" >
-
-</p><!--l. 140--><p class="noindent" ><img 
-src="data/qjackctl.png" alt="PIC"  
- /></p></div>
-     </li>
-     <li class="itemize">Control actions:
-         <ol  class="enumerate1" >
-         <li 
-  class="enumerate" id="x1-6002x1"><span 
-class="ectt-1000">Start: </span>the server.
-         </li>
-         <li 
-  class="enumerate" id="x1-6004x2"><span 
-class="ectt-1000">Stop: </span>the server.
-         </li>
-         <li 
-  class="enumerate" id="x1-6006x3"><span 
-class="ectt-1000">Quit: </span>kill the server.
-         </li>
-         <li 
-  class="enumerate" id="x1-6008x4"><span 
-class="ectt-1000">Messages: </span>from the server.
-         </li>
-         <li 
-  class="enumerate" id="x1-6010x5"><span 
-class="ectt-1000">Session: </span>show/hide the session manager window.
-         </li>
-         <li 
-  class="enumerate" id="x1-6012x6"><span 
-class="ectt-1000">Setup: </span>the server.
-         </li>
-         <li 
-  class="enumerate" id="x1-6014x7"><span 
-class="ectt-1000">Connect: </span>the audio applications. <a 
-href="http://www.rncbc.org/drupal/node/76" >Notice that</a> all connections made
-         in the Connections interface are kept as long you don&#x2019;t power-cycle
-         the JACK server (jackd). That is, all connections will be lost when
-         the JACK server or any of the client application programs are closed
-         or terminated.
-         </li>
-         <li 
-  class="enumerate" id="x1-6016x8"><span 
-class="ectt-1000">Patchbay: </span>will keep all declared connections automatically, as long as
-         QjackCtl is kept alive. Moreover, you can declare typical connection
-         conﬁguration  that  are  carried  out  when  the  related  clients  are
-         executed.
-         </li>
-         <li 
-  class="enumerate" id="x1-6018x9">Play: start transport timming events.
-         </li>
-         <li 
-  class="enumerate" id="x1-6020x10">Pause: stop transport timming events.
-                                                                  
-
-                                                                  
-         </li>
-         <li 
-  class="enumerate" id="x1-6022x11">Forward: transport timming events.
-         </li>
-         <li 
-  class="enumerate" id="x1-6024x12">Backward: transport timming event.
-         </li>
-         <li 
-  class="enumerate" id="x1-6026x13">Rewind: transport timming event.</li></ol>
-     </li></ul>
-<!--l. 170--><p class="noindent" >
-</p>
-   <h4 class="subsectionHead"><span class="titlemark">1.4.1   </span> <a 
- id="x1-70001.4.1"></a>Server conﬁguration</h4>
-     <ul class="itemize1">
-     <li class="itemize">Select the Setup form from the <span 
-class="ectt-1000">qjackctl </span>application. Clicking in the &#x0022;Settings&#x0022;
-     tab, you will obtain something like:
-     <div class="center" 
->
-<!--l. 177--><p class="noindent" >
-
-</p><!--l. 178--><p class="noindent" ><img 
-src="data/jack-setup.png" alt="PIC"  
- /></p></div>
-     </li>
-     <li class="itemize">Among others, the Setup window allows you to conﬁgure <a 
-href="http://en.flossmanuals.net/ardour/ch015_starting-jack-on-ubuntu/" >important
-     settings</a>:
-         <ol  class="enumerate1" >
-         <li 
-  class="enumerate" id="x1-7002x1"><span 
-class="ecbx-1000">Driver: </span>the physical audio driver. On Linux, the default option is
-         ALSA.
-         </li>
-         <li 
-  class="enumerate" id="x1-7004x2"><span 
-class="ecbx-1000">Realtime: </span>although this option is selected as the default, it requires
-         a Real-time capable system to use. Unless you have conﬁgured your
-         operating system for Real-time, uncheck this option.
-         </li>
-         <li 
-  class="enumerate" id="x1-7006x3"><span 
-class="ecbx-1000">Interface: </span>select the physical audio device that you would like the
-         Jack server to communicate with (for example, a FireWire or USB
-         interface or the built-in audio of your computer). Currently, JACK
-         can only communicate with one hardware audio device at a time.
-         </li>
-         <li 
-  class="enumerate" id="x1-7008x4"><span 
-class="ecbx-1000">Frames/Period:  </span>choose   your   desired   audio   buﬀer   size   (in
-         samples=frames). This paremeter controls the Latency.
-                                                                  
-
-                                                                  
-         </li>
-         <li 
-  class="enumerate" id="x1-7010x5"><span 
-class="ecbx-1000">Sample Rate: </span>choose your desired sample rate for the Jack server
-         and the rest of clients.</li></ol>
-     </li>
-     <li class="itemize">Once you have chosen your settings, click on OK to exit the Setup window.
-     Note that however the new settings will be saved, you will have to restart the
-     JACK Server for the changes to take eﬀect.
-     </li></ul>
-<!--l. 209--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">1.5   </span> <a 
- id="x1-80001.5"></a>Minimizing the number of XRUNs</h3>
-     <ul class="itemize1">
-     <li class="itemize">When we play live music with a computer, it is very important a low
-     latency.  This  aspect  can  be  controlled  in  the  Setup  section  of  JACK
-     modifying the buﬀer size.
-     </li>
-     <li class="itemize">However, Linux is a multi-task OS and JACK competes for the same
-     resources  that  other  applications.  Therefore,  when  Jack  does  not  gets
-     enough CPU a XRUN is provoked and the playback stutters.
-     </li>
-     <li class="itemize">In order to minimize the number of XRUNs we should realise that:
-     <!--l. 223--><p class="noindent" >
-         </p><ol  class="enumerate1" >
-         <li 
-  class="enumerate" id="x1-8002x1">Run only the critical applications.
-         </li>
-         <li 
-  class="enumerate" id="x1-8004x2">The JACK server is running with the highest priority<span class="footnote-mark"><a 
-href="index2.html#fn1x2"><sup class="textsuperscript">1</sup></a></span><a 
- id="x1-8005f1"></a> .
-         The current priority can be determined by:
-         <!--l. 235-->
-         <div class="lstlisting" id="listing-1"><span class="label"><a 
- id="x1-8006r1"></a></span>X=‘ps <span 
-class="cmsy-10">−</span>C jackd <span 
-class="cmsy-10">−</span>o pid=‘; ps <span 
-class="cmsy-10">−</span>o nice <span 
-class="cmsy-10">−</span>p $X
-         
-         </div>
-         <!--l. 239--><p class="noindent" >And incremented with:
-                                                                  
-
-                                                                  
-</p>
-         <div class="verbatim" id="verbatim-3">
-         X=‘ps -C jackd -o pid=‘; sudo renice -20 -p $X
-          <br /># Notice that renice only runs with administrator privileges!
-</div>
-         <!--l. 244--><p class="nopar" >
-         </p></li>
-         <li 
-  class="enumerate" id="x1-8008x3">Conﬁgure, compile and boot a <a 
-href="https://rt.wiki.kernel.org/index.php/Main_Page" >real-time kernel</a>.
-         </li>
-         <li 
-  class="enumerate" id="x1-8010x4">Improve your sound hardware.
-         </li>
-         <li 
-  class="enumerate" id="x1-8012x5">Improve your computer hardware.
-         </li></ol>
-     </li></ul>
-                                                                  
-
-                                                                  
-<!--l. 257--><p class="indent" >
-                                                                  
-
-                                                                  
-</p>
-   <h2 class="chapterHead"><span class="titlemark">Chapter 2</span><br /><a 
- id="x1-90002"></a>Living with PulseAudio</h2>
-   <h3 class="sectionHead"><span class="titlemark">2.1   </span> <a 
- id="x1-100002.1"></a>What is <a 
-href="http://www.freedesktop.org/wiki/Software/PulseAudio/About/" >Pulseaudio?</a></h3>
-     <ul class="itemize1">
-     <li class="itemize">Pulseaudio is a sound system (audio server) for POSIX operating systems
-     (such as GNU/Linux, Solaris, FreeBSD, NetBSD, MacOS X, Windows
-     2000 and Windows XP).
-     </li>
-     <li class="itemize">It is a software layer between the kernel (ALSA) and the applications that
-     requires to access to the sound hardware.
-     </li>
-     <li class="itemize"><a 
-href="https://rudd-o.com/linux-and-free-software/how-pulseaudio-works" >Architecture</a>:
-     <div class="center" 
->
-<!--l. 270--><p class="noindent" >
-
-</p><!--l. 271--><p class="noindent" ><img 
-src="data/PulseAudio_diagram.png" alt="PIC"  
- /></p></div>
-     </li>
-     <li class="itemize">Licensed under LGPL 2.1+.
-     </li>
-     <li class="itemize">Currently, PulseAudio (PA) is used in most friendly Linux distributions
-     to multiplex the sound hardware between the applications that use
-     it.
-     </li>
-     <li class="itemize">The server and clients does not need to run in the same host. This means that
-     one application that run in a remote host can play sound in the local host of
-     the user (that runs the server).
-     </li></ul>
-<!--l. 286--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">2.2   </span> <a 
- id="x1-110002.2"></a>Functions</h3>
-<!--l. 287--><p class="noindent" >
-     </p><ol  class="enumerate1" >
-     <li 
-  class="enumerate" id="x1-11002x1">Software mixing of multiple audio streams, bypassing any restrictions the
-     hardware has.
-                                                                  
-
-                                                                  
-     </li>
-     <li 
-  class="enumerate" id="x1-11004x2">Network transparency, allowing an application to play back or record audio
-     on a diﬀerent machine than the one it is running on.
-     </li>
-     <li 
-  class="enumerate" id="x1-11006x3">Sound  API  abstraction,  alleviating  the  need  for  multiple  backends  in
-     applications to handle the wide diversity of sound systems out there.
-     </li>
-     <li 
-  class="enumerate" id="x1-11008x4">Generic hardware abstraction, giving the possibility of doing things like
-     individual volumes per application.</li></ol>
-<!--l. 299--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">2.3   </span> <a 
- id="x1-120002.3"></a><a 
-href="https://wiki.archlinux.org/index.php/PulseAudio" >Daemon control</a></h3>
-     <ul class="itemize1">
-     <li class="itemize">In the unlikely case that PulseAudio is not automatically started upon entering
-     X, it can can be started with:
-                                                                  
-
-                                                                  
-     <div class="verbatim" id="verbatim-4">
-     ps aux | grep pulse
-      <br />...
-      <br />vruiz     2201  0.0  0.2 484192  5728 ?        Sl   Sep17  32:18 /usr/bin/pulseaudio --start --log-target=syslog
-      <br />vruiz     2204  0.0  0.0  98392   508 ?        S    Sep17   0:00 /usr/lib/pulseaudio/pulse/gconf-helper
-      <br />vruiz    20709  0.0  0.0  11748   888 pts/13   S+   17:13   0:00 grep pulse
-      <br />...
-      <br />
-      <br />pulseaudio --start   # On the whole system
-      <br />start-pulseaudio-x11 # In a X session (usually inside ~/.xinitrc)
-</div>
-     <!--l. 314--><p class="nopar" > and stopped with:
-                                                                  
-
-                                                                  
-</p>
-     <div class="verbatim" id="verbatim-5">
-     pulseaudio --kill
-</div>
-     <!--l. 318--><p class="nopar" >
-     </p></li>
-     <li class="itemize">A more accurate control can be obtained with <span 
-class="ectt-1000">pactl</span>. More info at <span 
-class="ectt-1000">man</span>
-     <span 
-class="ectt-1000">pactl</span>.
-     </li></ul>
-<!--l. 325--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">2.4   </span> <a 
- id="x1-130002.4"></a>Pulseaudio and ALSA tools</h3>
-     <ul class="itemize1">
-     <li class="itemize">By  default,  in  most  OSs,  ALSA  tools  (such  as  <span 
-class="ectt-1000">arecord</span>)  has  been
-     conﬁgured to access to the sound hardware thought Pulseaudio.</li></ul>
-<!--l. 332--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">2.5   </span> <a 
- id="x1-140002.5"></a>Bypassing PA server (and JACK)</h3>
-                                                                  
-
-                                                                  
-   <div class="verbatim" id="verbatim-6">
-pasuspender mplayer -ao alsa * &#x0026;
-</div>
-<!--l. 335--><p class="nopar" >
-</p><!--l. 337--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">2.6   </span> <a 
- id="x1-150002.6"></a>Sound system usage</h3>
-                                                                  
-
-                                                                  
-   <div class="verbatim" id="verbatim-7">
-$ fuser -v /dev/snd/*
- <br />                     USER        PID ACCESS COMMAND
- <br />/dev/snd/controlC0:  vruiz      2201 F.... pulseaudio
- <br />                     vruiz      3810 F.... alsamixer
- <br />/dev/snd/pcmC0D0p:   vruiz      2201 F...m pulseaudio
-</div>
-<!--l. 344--><p class="nopar" >
-</p><!--l. 346--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">2.7   </span> <a 
- id="x1-160002.7"></a>Conﬁguration</h3>
-<!--l. 347--><p class="noindent" >PA is conﬁgured by modiﬁying the ﬁles:
-                                                                  
-
-                                                                  
-</p>
-   <div class="verbatim" id="verbatim-8">
-/etc/pulse/daemon.conf
- <br />/etc/pulse/default.pa
-</div>
-<!--l. 351--><p class="nopar" >
-</p><!--l. 353--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">2.8   </span> <a 
- id="x1-170002.8"></a>Volume control</h3>
-                                                                  
-
-                                                                  
-   <div class="verbatim" id="verbatim-9">
-$ pavucontrol &#x0026;
-</div>
-<!--l. 356--><p class="nopar" >
-</p><!--l. 358--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">2.9   </span> <a 
- id="x1-180002.9"></a>Module <span 
-class="ectt-1000">pulseaudio-module-jack</span></h3>
-                                                                  
-
-                                                                  
-   <div class="verbatim" id="verbatim-10">
-# Install the PulseAudio&#x2019;s module for Jack
- <br />sudo apt-get install pulseaudio-module-jack
- <br />
- <br /># Go to:
- <br />cd /etc/pulse/
- <br />
- <br /># Make a backup of the file:
- <br />sudo cp default.pa default.pa.old
- <br />
- <br /># Edit it:
- <br />sudo gedit default.pa
- <br />
- <br /># Add:
- <br />#
- <br /># load-module module-jack-source
- <br /># load-module module-jack-sink
- <br />#
- <br /># after &#x0022;load-module module-pipe-sink&#x0022;.
- <br />#
- <br /># Remember to remove the &#x2019;#&#x2019; of these lines!!
- <br />
- <br /># Kill and reload JACK.
- <br />pulseaudio --kill
-</div>
-<!--l. 383--><p class="nopar" > </p>
-<div class="center" 
->
-<!--l. 384--><p class="noindent" >
-
-</p><!--l. 385--><p class="noindent" ><img 
-src="data/gedit.png" alt="PIC"  
- /> <img 
-src="data/pulse-connections.png" alt="PIC"  
- /></p></div>
-                                                                  
-
-                                                                  
-<!--l. 389--><p class="indent" >
-                                                                  
-
-                                                                  
-</p>
-   <h2 class="chapterHead"><span class="titlemark">Chapter 3</span><br /><a 
- id="x1-190003"></a>Media players</h2>
-   <h3 class="sectionHead"><span class="titlemark">3.1   </span> <a 
- id="x1-200003.1"></a>Media player: <a 
-href="http://www.mplayerhq.hu/" >MPlayer</a></h3>
-                                                                  
-
-                                                                  
-   <div class="verbatim" id="verbatim-11">
-$ mplayer -ao jack * &#x0026;
-</div>
-<!--l. 396--><p class="nopar" > </p>
-<div class="center" 
->
-<!--l. 397--><p class="noindent" >
-
-</p><!--l. 398--><p class="noindent" ><img 
-src="data/mplayer-connections.png" alt="PIC"  
- /> <img 
-src="data/mplayer.png" alt="PIC"  
- /> <img 
-src="data/mplayer-alsamixer.png" alt="PIC"  
- /></p></div>
-                                                                  
-
-                                                                  
-   <h2 class="chapterHead"><span class="titlemark">Chapter 4</span><br /><a 
- id="x1-210004"></a>Meters</h2>
-   <h3 class="sectionHead"><span class="titlemark">4.1   </span> <a 
- id="x1-220004.1"></a>A VU (Volume Unit) meter: <a 
-href="http://plugin.org.uk/meterbridge/" >meterbridge</a></h3>
-<!--l. 427--><p class="noindent" >
-     </p><ol  class="enumerate1" >
-     <li 
-  class="enumerate" id="x1-22002x1">Run:
-                                                                  
-
-                                                                  
-     <div class="verbatim" id="verbatim-12">
-     $ meterbridge -t vu alsa_pcm:capture_1 alsa_pcm:capture_2 &#x0026;  # Or ...
-      <br />$ meterbridge -t ppm alsa_pcm:capture_1 alsa_pcm:capture_2 &#x0026; # Or ...
-      <br />$ meterbridge -t dpm alsa_pcm:capture_1 alsa_pcm:capture_2 &#x0026; # Or ...
-      <br />$ meterbridge -t jf alsa_pcm:capture_1 alsa_pcm:capture_2 &#x0026;  # Or ...
-      <br />$ meterbridge -t sco alsa_pcm:capture_1 alsa_pcm:capture_2 &#x0026; # Although this is preferable
-</div>
-     <!--l. 435--><p class="nopar" > </p>
-     <div class="center" 
->
-<!--l. 436--><p class="noindent" >
-
-</p><!--l. 437--><p class="noindent" ><img 
-src="data/meterbridge.png" alt="PIC"  
- /></p></div>
-     </li>
-     <li 
-  class="enumerate" id="x1-22004x2">Connect (route) it:
-     <div class="center" 
->
-<!--l. 440--><p class="noindent" >
-
-</p><!--l. 441--><p class="noindent" ><img 
-src="data/qjackctl-meterbridge.png" alt="PIC"  
- /></p></div>
-     </li>
-     <li 
-  class="enumerate" id="x1-22006x3">But, I don&#x2019;t listen myself! Of course, you have to route the <span 
-class="ectt-1000">system </span>readable
-     client in the Connections/Audio window towards the <span 
-class="ectt-1000">system </span>writable client in
-     order to provide this functionality. But be careful with the output volume of
-     the speakers (Master and PCM) and the microphone gain (Mic and Mic Boost)
-     mixer controls, specially is you are done this in a laptop, because the
-     microphone can be feedbacked by the speakers, producing an annoying sound
-     coupling. See below:
-     <div class="center" 
->
-<!--l. 453--><p class="noindent" >
-
-</p><!--l. 454--><p class="noindent" ><img 
-src="data/alsamixer-capture.png" alt="PIC"  
- /> <img 
-src="data/JACK-started.png" alt="PIC"  
- /> <img 
-src="data/meterbridge-connections.png" alt="PIC"  
- /> <img 
-src="data/meterbridge-sco.png" alt="PIC"  
- /></p></div>
-     </li></ol>
-                                                                  
-
-                                                                  
-<!--l. 485--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">4.2   </span> <a 
- id="x1-230004.2"></a><a 
-href="http://www.kokkinizita.net/linuxaudio/" >Japa (JACK Perceptual Analyzer)</a></h3>
-     <ul class="itemize1">
-     <li class="itemize">Run as (while the JACK server is running):
-                                                                  
-
-                                                                  
-     <div class="verbatim" id="verbatim-13">
-     $ japa -J &#x0026;
-</div>
-     <!--l. 492--><p class="nopar" > </p>
-     <div class="center" 
->
-<!--l. 493--><p class="noindent" >
-
-</p><!--l. 494--><p class="noindent" ><img 
-src="data/japa-connections.png" alt="PIC"  
- /> <img 
-src="data/japa.png" alt="PIC"  
- /></p></div>
-     </li></ul>
-                                                                  
-
-                                                                  
-   <h2 class="chapterHead"><span class="titlemark">Chapter 5</span><br /><a 
- id="x1-240005"></a>Eﬀects</h2>
-   <h3 class="sectionHead"><span class="titlemark">5.1   </span> <a 
- id="x1-250005.1"></a><a 
-href="http://jamin.sourceforge.net" >JAMin (JACK Audio Mastering interface)</a></h3>
-                                                                  
-
-                                                                  
-   <div class="verbatim" id="verbatim-14">
-$ jamin &#x0026;
-</div>
-<!--l. 508--><p class="nopar" > </p>
-<div class="center" 
->
-<!--l. 509--><p class="noindent" >
-
-</p><!--l. 510--><p class="noindent" ><img 
-src="data/jamin-connections.png" alt="PIC"  
- /> <img 
-src="data/jamin.png" alt="PIC"  
- /></p></div>
-<!--l. 533--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">5.2   </span> <a 
- id="x1-260005.2"></a><a 
-href="http://jack-rack.sourceforge.net" >JACK Rack</a></h3>
-                                                                  
-
-                                                                  
-   <div class="verbatim" id="verbatim-15">
-$ jack-rack &#x0026;
-</div>
-<!--l. 536--><p class="nopar" > </p>
-<div class="center" 
->
-<!--l. 537--><p class="noindent" >
-
-</p><!--l. 538--><p class="noindent" ><img 
-src="data/jack-rack-connections.png" alt="PIC"  
- /> <img 
-src="data/jack-rack.png" alt="PIC"  
- /></p></div>
-<!--l. 542--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">5.3   </span> <a 
- id="x1-270005.3"></a><a 
-href="http://rakarrack.sourceforge.net" >Rakarrack</a></h3>
-                                                                  
-
-                                                                  
-   <div class="verbatim" id="verbatim-16">
-$ rakarrack &#x0026;
-</div>
-<!--l. 545--><p class="nopar" > </p>
-<div class="center" 
->
-<!--l. 546--><p class="noindent" >
-
-</p><!--l. 547--><p class="noindent" ><img 
-src="data/rakarrack-connections.png" alt="PIC"  
- /> <img 
-src="data/rakarrack.png" alt="PIC"  
- /></p></div>
-<!--l. 551--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">5.4   </span> <a 
- id="x1-280005.4"></a><a 
-href="http://freqtweak.sourceforge.net" >Freqtweak</a></h3>
-                                                                  
-
-                                                                  
-   <div class="verbatim" id="verbatim-17">
-$ freqtweak &#x0026;
-</div>
-<!--l. 554--><p class="nopar" > </p>
-<div class="center" 
->
-<!--l. 555--><p class="noindent" >
-
-</p><!--l. 556--><p class="noindent" ><img 
-src="data/freqtweak-connections.png" alt="PIC"  
- /> <img 
-src="data/freqtweak.png" alt="PIC"  
- /></p></div>
-<!--l. 573--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">5.5   </span> <a 
- id="x1-290005.5"></a><a 
-href="http://home.gna.org/fmit" >FMIT (Free Music Instrument Tuner)</a></h3>
-                                                                  
-
-                                                                  
-   <div class="verbatim" id="verbatim-18">
-fmit &#x0026;
-</div>
-<!--l. 576--><p class="nopar" > </p>
-<div class="center" 
->
-<!--l. 577--><p class="noindent" >
-
-</p><!--l. 578--><p class="noindent" ><img 
-src="data/fmit-connections.png" alt="PIC"  
- /> <img 
-src="data/fmit.png" alt="PIC"  
- /></p></div>
-                                                                  
-
-                                                                  
-   <h2 class="chapterHead"><span class="titlemark">Chapter 6</span><br /><a 
- id="x1-300006"></a>Edition</h2>
-   <h3 class="sectionHead"><span class="titlemark">6.1   </span> <a 
- id="x1-310006.1"></a><a 
-href="http://audacity.sourceforge.net" >Audacity</a>: capture and edit audio</h3>
-                                                                  
-
-                                                                  
-   <div class="verbatim" id="verbatim-19">
-# Note: usually audacity establish the connections when playing.
- <br />$ audacity &#x0026;
-</div>
-<!--l. 603--><p class="nopar" > </p>
-<div class="center" 
->
-<!--l. 604--><p class="noindent" >
-
-</p><!--l. 605--><p class="noindent" ><img 
-src="data/audacity-connections.png" alt="PIC"  
- /> <img 
-src="data/audacity.png" alt="PIC"  
- /></p></div>
-                                                                  
-
-                                                                  
-   <h2 class="chapterHead"><span class="titlemark">Chapter 7</span><br /><a 
- id="x1-320007"></a>Capture</h2>
-   <h3 class="sectionHead"><span class="titlemark">7.1   </span> <a 
- id="x1-330007.1"></a><a 
-href="http://plugin.org.uk/timemachine/" >JACK Timemachine</a>: capture audio</h3>
-                                                                  
-
-                                                                  
-   <div class="verbatim" id="verbatim-20">
-$ timemachine &#x0026;
-</div>
-<!--l. 618--><p class="nopar" > </p>
-<div class="center" 
->
-<!--l. 619--><p class="noindent" >
-
-</p><!--l. 620--><p class="noindent" ><img 
-src="data/timemachine-connections.png" alt="PIC"  
- /> <img 
-src="data/timemachine.png" alt="PIC"  
- /></p></div>
-                                                                  
-
-                                                                  
-   <h2 class="chapterHead"><span class="titlemark">Chapter 8</span><br /><a 
- id="x1-340008"></a>Synthesis</h2>
-   <h3 class="sectionHead"><span class="titlemark">8.1   </span> <a 
- id="x1-350008.1"></a>The <a 
-href="http://www.hydrogen-music.org/hcms" >Hydrogen</a> drum machine</h3>
-                                                                  
-
-                                                                  
-   <div class="verbatim" id="verbatim-21">
-$ hydrogen &#x0026;
-</div>
-<!--l. 631--><p class="nopar" > </p>
-<div class="center" 
->
-<!--l. 632--><p class="noindent" >
-
-</p><!--l. 633--><p class="noindent" ><img 
-src="data/hydrogen-connections.png" alt="PIC"  
- /> <img 
-src="data/hydrogen.png" alt="PIC"  
- /> <img 
-src="data/hydrogen-mixer.png" alt="PIC"  
- /></p></div>
-<!--l. 638--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">8.2   </span> <a 
- id="x1-360008.2"></a><a 
-href="http://zynaddsubfx.sourceforge.net/" >ZynAddSubFX</a></h3>
-                                                                  
-
-                                                                  
-   <div class="verbatim" id="verbatim-22">
-zynaddsubfx &#x0026;
-</div>
-<!--l. 641--><p class="nopar" >
-</p>
-<div class="center" 
->
-<!--l. 643--><p class="noindent" >
-
-</p><!--l. 644--><p class="noindent" ><img 
-src="data/zynaddsubfx.png" alt="PIC"  
- /> <img 
-src="data/zynaddsubfx-connections.png" alt="PIC"  
- /></p></div>
-<!--l. 648--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">8.3   </span> <a 
- id="x1-370008.3"></a><a 
-href="http://timidity.sourceforge.net/" >TiMidity</a></h3>
-                                                                  
-
-                                                                  
-   <div class="verbatim" id="verbatim-23">
-timidity ~/Downloads/teddybear.mid
-</div>
-<!--l. 651--><p class="nopar" > </p>
-<div class="center" 
->
-<!--l. 652--><p class="noindent" >
-
-</p><!--l. 653--><p class="noindent" ><img 
-src="data/timidity.png" alt="PIC"  
- /> <img 
-src="data/timidity-connections.png" alt="PIC"  
- /></p></div>
-<!--l. 657--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">8.4   </span> <a 
- id="x1-380008.4"></a><a 
-href="http://jack-keyboard.sourceforge.net/" >JACK Keyboard</a> and <a 
-href="https://code.google.com/p/amsynth/" >AMSynth</a></h3>
-                                                                  
-
-                                                                  
-   <div class="verbatim" id="verbatim-24">
-jack-keyboard &#x0026;
- <br />amsynth &#x0026;
-</div>
-<!--l. 661--><p class="nopar" >
-</p>
-<div class="center" 
->
-<!--l. 663--><p class="noindent" >
-
-</p><!--l. 664--><p class="noindent" ><img 
-src="data/jack-keyboard.png" alt="PIC"  
- /> <img 
-src="data/amsynth.png" alt="PIC"  
- /> <img 
-src="data/amsynth-connections.png" alt="PIC"  
- /></p></div>
-                                                                  
-
-                                                                  
-<!--l. 717--><p class="indent" >
-                                                                  
-
-                                                                  
-</p>
-   <h2 class="chapterHead"><span class="titlemark">Chapter 9</span><br /><a 
- id="x1-390009"></a>Remember</h2>
-     <ul class="itemize1">
-     <li class="itemize">While  the  modules  <span 
-class="ectt-1000">module-jack-source </span>and  <span 
-class="ectt-1000">module-jack-sink </span>are
-     loaded into Pulseaudio, the JACK server is automatically started.
-     </li>
-     <li class="itemize">To     avoid     this,     remove     these     modules     from     the     ﬁle
-     <span 
-class="ectt-1000">/etc/pulse/default.pa</span>.
-     </li></ul>
+<a 
+ id="Q1-1-3"></a>
     
-</body> 
-</html>
+</body></html> 
+
                                                                   
 
 
