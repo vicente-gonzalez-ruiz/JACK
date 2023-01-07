@@ -1,18 +1,15 @@
-<?xml version="1.0" encoding="iso-8859-1" ?> 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" 
-"http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd" > 
-<html xmlns="http://www.w3.org/1999/xhtml"  
-> 
-<head><title>JACK &#x0028;JACK Audio Connection Kit&#x0029; and related tools</title> 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
-<meta name="generator" content="TeX4ht (https://tug.org/tex4ht/)" /> 
-<meta name="originator" content="TeX4ht (https://tug.org/tex4ht/)" /> 
-<!-- xhtml,mathml,html --> 
-<meta name="src" content="index.tex" /> 
-<link rel="stylesheet" type="text/css" href="index.css" /> 
-</head><body 
->
-   <div class="maketitle">
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head> <title>JACK (JACK Audio Connection Kit) and related tools</title> 
+<meta charset='utf-8' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='index.css' rel='stylesheet' type='text/css' /> 
+<meta content='index.tex' name='src' /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+ <script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
+</head><body>
+   <div class='maketitle'>
                                                                   
 
                                                                   
@@ -23,198 +20,107 @@
 
                                                                   
 
-<h2 class="titleHead">JACK &#x0028;JACK Audio Connection Kit&#x0029; and
+<h2 class='titleHead'>JACK (JACK Audio Connection Kit) and
 related tools</h2>
- <div class="author" ><a 
-href="https://cms.ual.es/UAL/personas/persona.htm?id=515256515553484875" ><span 
-class="ecrm-1200">Vicente Gonz</span><span 
-class="ecrm-1200">&#x00E1;</span><span 
-class="ecrm-1200">lez Ruiz</span></a> <span 
-class="ecrm-1200">- </span><a 
-href="https://cms.ual.es/UAL/universidad/departamentos/informatica/index.htm" ><span 
-class="ecrm-1200">Depto Inform</span><span 
-class="ecrm-1200">&#x00E1;</span><span 
-class="ecrm-1200">tica</span></a> <span 
-class="ecrm-1200">- </span><a 
-href="https://www.ual.es" ><span 
-class="ecrm-1200">UAL</span></a></div><br />
-<div class="date" ><span 
-class="ecrm-1200">March 14, 2022</span></div>
+ <div class='author'><a href='https://cms.ual.es/UAL/personas/persona.htm?id=515256515553484875'><span class='ecrm-1200'>Vicente González Ruiz</span></a> <span class='ecrm-1200'>- </span><a href='https://cms.ual.es/UAL/universidad/departamentos/informatica/index.htm'><span class='ecrm-1200'>Depto Informática</span></a> <span class='ecrm-1200'>- </span><a href='https://www.ual.es'><span class='ecrm-1200'>UAL</span></a></div><br />
+<div class='date'><span class='ecrm-1200'>September 13, 2022</span></div>
                                                                   
 
                                                                   
    </div>
-   <hr class="figure" /><div class="figure" 
->
+   <figure class='figure' id='-the-linux-audio-problably-partial-stack-'> 
+
                                                                   
 
                                                                   
                                                                   
 
                                                                   
-<div class="center" 
->
-<!--l. 6--><p class="noindent" >
+<div class='center'>
+<!-- l. 6 --><p class='noindent'>
 </p>
-<div class="tabular"> <table id="TBL-2" class="tabular" 
-rules="groups" 
-><colgroup id="TBL-2-1g"><col 
-id="TBL-2-1" /></colgroup><colgroup id="TBL-2-2g"><col 
-id="TBL-2-2" /></colgroup><tr 
-class="hline"><td><hr /></td><td><hr /></td></tr><tr  
- style="vertical-align:baseline;" id="TBL-2-1-"><td colspan="2" style="text-align:center; white-space:nowrap;" id="TBL-2-1-1"  
-class="td11"> <div class="multicolumn"  style="text-align:center; white-space:nowrap;"><a 
-href="https://en.wikipedia.org/wiki/List_of_Linux_audio_software" >Linux Audio Applications</a></div>
-</td></tr><tr 
-class="hline"><td><hr /></td><td><hr /></td></tr><tr  
- style="vertical-align:baseline;" id="TBL-2-2-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-2-1"  
-class="td11"> <a 
-href="https://jackaudio.org/" >JACK</a>  </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-2-2"  
-class="td11">  <a 
-href="https://www.freedesktop.org/wiki/Software/PulseAudio/" >Pulse Audio</a>    </td>
-</tr><tr 
-class="hline"><td><hr /></td><td><hr /></td></tr><tr  
- style="vertical-align:baseline;" id="TBL-2-3-"><td colspan="2" style="text-align:center; white-space:nowrap;" id="TBL-2-3-1"  
-class="td11">          <div class="multicolumn"  style="text-align:center; white-space:nowrap;"><a 
-href="https://www.alsa-project.org" >ALSA</a></div>
-</td></tr><tr 
-class="hline"><td><hr /></td><td><hr /></td></tr><tr  
- style="vertical-align:baseline;" id="TBL-2-4-"><td colspan="2" style="text-align:center; white-space:nowrap;" id="TBL-2-4-1"  
-class="td11">     <div class="multicolumn"  style="text-align:center; white-space:nowrap;"><a 
-href="https://www.alsa-project.org/wiki/Matrix:Main" >Sound hardware</a></div>
-</td></tr><tr 
-class="hline"><td><hr /></td><td><hr /></td></tr><tr  
- style="vertical-align:baseline;" id="TBL-2-5-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-5-1"  
-class="td11">       </td></tr></table></div></div>
-<a 
- id="x1-2r1"></a>
-<a 
- id="x1-3"></a>
-<br />                                                                  <div class="caption" 
-><span class="id">
-Figure&#x00A0;1: </span><span  
-class="content">The Linux Audio &#x0028;problably partial&#x0029; Stack.
-</span></div><!--tex4ht:label?: x1-2r -->
+<div class='tabular'> <table class='tabular' id='TBL-2'><colgroup id='TBL-2-1g'><col id='TBL-2-1' /></colgroup><colgroup id='TBL-2-2g'><col id='TBL-2-2' /></colgroup><tr class='hline'><td></td><td></td></tr><tr id='TBL-2-1-' style='vertical-align:baseline;'><td class='td11' colspan='2' id='TBL-2-1-1' style='white-space:nowrap; text-align:center;'> <div class='multicolumn' style='white-space:nowrap; text-align:center;'><a href='https://en.wikipedia.org/wiki/List_of_Linux_audio_software'>Linux Audio Applications</a></div>
+</td></tr><tr class='hline'><td></td><td></td></tr><tr id='TBL-2-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-2-1' style='white-space:nowrap; text-align:center;'> <a href='https://jackaudio.org/'>JACK</a>  </td><td class='td11' id='TBL-2-2-2' style='white-space:nowrap; text-align:center;'>  <a href='https://www.freedesktop.org/wiki/Software/PulseAudio/'>Pulse Audio</a>    </td>
+</tr><tr class='hline'><td></td><td></td></tr><tr id='TBL-2-3-' style='vertical-align:baseline;'><td class='td11' colspan='2' id='TBL-2-3-1' style='white-space:nowrap; text-align:center;'>          <div class='multicolumn' style='white-space:nowrap; text-align:center;'><a href='https://www.alsa-project.org'>ALSA</a></div>
+</td></tr><tr class='hline'><td></td><td></td></tr><tr id='TBL-2-4-' style='vertical-align:baseline;'><td class='td11' colspan='2' id='TBL-2-4-1' style='white-space:nowrap; text-align:center;'>     <div class='multicolumn' style='white-space:nowrap; text-align:center;'><a href='https://www.alsa-project.org/wiki/Matrix:Main'>Sound hardware</a></div>
+</td></tr><tr class='hline'><td></td><td></td></tr></table></div></div>
+<a id='x1-2r1'></a>
+<a id='x1-3'></a>
+<figcaption class='caption'><span class='id'>Figure 1: </span><span class='content'>The Linux Audio (problably partial) Stack.
+</span></figcaption><!-- tex4ht:label?: x1-2r  -->
                                                                   
 
                                                                   
-   </div><hr class="endfigure" />
-<!--l. 23--><p class="indent" >   Like PulseAudio, <a 
-href="http://jackaudio.org/" >JACK</a> &#x0028;JACK Audio Connection Kit&#x0029; <span class="cite">&#x005B;<a 
-href="#Xletz2005jack">1</a>&#x005D;</span> is sound server that
-proxies between the audio applications &#x0028;that must use JACK&#x0029; and ALSA.
+   </figure>
+<!-- l. 23 --><p class='indent'>   Like PulseAudio, <a href='http://jackaudio.org/'>JACK</a> (JACK Audio Connection Kit) <span class='cite'>[<a href='#Xletz2005jack'>1</a>]</span> is sound server that
+proxies between the audio applications (that must use JACK) and ALSA.
 JACK is the right choice if latency is important for you because it can be
-con&#xFB01;gured. Another interesting feature of JACK is that allows to de&#xFB01;ne the
-connections &#x0028;audio &#xFB02;ows&#x0029; between JACK-client applications &#x0028;like in a real
-mixer desk&#x0029;. Finally, if you use MIDI apps and/or MIDI hardware, rely on
+configured. Another interesting feature of JACK is that allows to define the
+connections (audio flows) between JACK-client applications (like in a real
+mixer desk). Finally, if you use MIDI apps and/or MIDI hardware, rely on
 JACK.
-</p><!--l. 32--><p class="indent" >   All the functionality of JACK can be get through running <a 
-href="https://qjackctl.sourceforge.io/" >QjackCtl</a>:
+</p><!-- l. 32 --><p class='indent'>   All the functionality of JACK can be get through running <a href='https://qjackctl.sourceforge.io/'>QjackCtl</a>:
                                                                   
 
                                                                   
 </p>
-   <pre class="verbatim" id="verbatim-1">
-qjackctl&#x00A0;&#x0026;
+   <pre class='verbatim' id='verbatim-1'>
+qjackctl &amp;
 </pre>
-<!--l. 36--><p class="nopar" > that is a GUI for con&#xFB01;guring the JACK server parameters and de&#xFB01;ne the audio
-&#xFB02;ows. Usually, the following options are available:
-     </p><ol  class="enumerate1" >
-<li 
-  class="enumerate" id="x1-5x1">
-     <!--l. 39--><p class="noindent" ><span 
-class="ectt-1000">Start: </span>the server.
-     </p></li>
-<li 
-  class="enumerate" id="x1-7x2">
-     <!--l. 40--><p class="noindent" ><span 
-class="ectt-1000">Stop: </span>the server.
-     </p></li>
-<li 
-  class="enumerate" id="x1-9x3">
-     <!--l. 41--><p class="noindent" ><span 
-class="ectt-1000">Quit: </span>kill the server.
-     </p></li>
-<li 
-  class="enumerate" id="x1-11x4">
-     <!--l. 42--><p class="noindent" ><span 
-class="ectt-1000">Messages: </span>from the server.
-     </p></li>
-<li 
-  class="enumerate" id="x1-13x5">
-     <!--l. 43--><p class="noindent" ><span 
-class="ectt-1000">Session: </span>show/hide the session manager window.
-     </p></li>
-<li 
-  class="enumerate" id="x1-15x6">
-     <!--l. 44--><p class="noindent" ><span 
-class="ectt-1000">Setup: </span>the server.
-     </p></li>
-<li 
-  class="enumerate" id="x1-17x7">
-     <!--l. 45--><p class="noindent" ><span 
-class="ectt-1000">Connect: </span>the audio applications. <a 
-href="http://www.rncbc.org/drupal/node/76" >Notice that</a> all connections made in the
-     Connections interface are kept as long you don&#x2019;t power-cycle the JACK
-     server &#x0028;jackd&#x0029;. That is, all connections will be lost when the JACK server
+<!-- l. 36 --><p class='nopar'> that is a GUI for configuring the JACK server parameters and define the audio
+flows. Usually, the following options are available:
+     </p><ol class='enumerate1'>
+<li class='enumerate' id='x1-5x1'><span class='ectt-1000'>Start: </span>the server.
+     </li>
+<li class='enumerate' id='x1-7x2'><span class='ectt-1000'>Stop: </span>the server.
+     </li>
+<li class='enumerate' id='x1-9x3'><span class='ectt-1000'>Quit: </span>kill the server.
+     </li>
+<li class='enumerate' id='x1-11x4'><span class='ectt-1000'>Messages: </span>from the server.
+     </li>
+<li class='enumerate' id='x1-13x5'><span class='ectt-1000'>Session: </span>show/hide the session manager window.
+     </li>
+<li class='enumerate' id='x1-15x6'><span class='ectt-1000'>Setup: </span>the server.
+     </li>
+<li class='enumerate' id='x1-17x7'><span class='ectt-1000'>Connect: </span>the audio applications. <a href='http://www.rncbc.org/drupal/node/76'>Notice that</a> all connections made in the
+     Connections interface are kept as long you don’t power-cycle the JACK
+     server (jackd). That is, all connections will be lost when the JACK server
      or any of the client application programs are closed or terminated.
                                                                   
 
                                                                   
-     </p></li>
-<li 
-  class="enumerate" id="x1-19x8">
-     <!--l. 51--><p class="noindent" ><span 
-class="ectt-1000">Patchbay: </span>will keep all declared connections automatically, as long as
+     </li>
+<li class='enumerate' id='x1-19x8'><span class='ectt-1000'>Patchbay: </span>will keep all declared connections automatically, as long as
      QjackCtl  is  kept  alive.  Moreover,  you  can  declare  typical  connection
-     con&#xFB01;guration that are carried out when the related clients are executed.
-     </p></li>
-<li 
-  class="enumerate" id="x1-21x9">
-     <!--l. 55--><p class="noindent" >Play: start transport <a 
-href="https://jackaudio.org/api/group__MIDIAPI.html" >timming events</a>.
-     </p></li>
-<li 
-  class="enumerate" id="x1-23x10">
-     <!--l. 58--><p class="noindent" >Pause: stop transport timming events.
-     </p></li>
-<li 
-  class="enumerate" id="x1-25x11">
-     <!--l. 59--><p class="noindent" >Forward: transport timming events.
-     </p></li>
-<li 
-  class="enumerate" id="x1-27x12">
-     <!--l. 60--><p class="noindent" >Backward: transport timming event.
-     </p></li>
-<li 
-  class="enumerate" id="x1-29x13">
-     <!--l. 61--><p class="noindent" >Rewind: transport timming event.</p></li></ol>
-   <h3 class="sectionHead"><span class="titlemark">0.1   </span> <a 
- id="x1-10000.1"></a>Resources</h3>
+     configuration that are carried out when the related clients are executed.
+     </li>
+<li class='enumerate' id='x1-21x9'>Play: start transport <a href='https://jackaudio.org/api/group__MIDIAPI.html'>timming events</a>.
+     </li>
+<li class='enumerate' id='x1-23x10'>Pause: stop transport timming events.
+     </li>
+<li class='enumerate' id='x1-25x11'>Forward: transport timming events.
+     </li>
+<li class='enumerate' id='x1-27x12'>Backward: transport timming event.
+     </li>
+<li class='enumerate' id='x1-29x13'>Rewind: transport timming event.</li></ol>
+   <h3 class='sectionHead' id='resources'><span class='titlemark'>0.1   </span> <a id='x1-10000.1'></a>Resources</h3>
                                                                   
 
                                                                   
-<!--l. 1--><p class="indent" >
+<!-- l. 1 --><p class='indent'>
                                                                   
 
                                                                   
 </p>
-   <h2 class="likechapterHead"><a 
- id="x1-20000.1"></a>Bibliography</h2>
-   <div class="thebibliography">
-   <p class="bibitem" ><span class="biblabel">
- &#x005B;1&#x005D;<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
- id="Xletz2005jack"></a>St&#x00E9;phane Letz, Yann Orlarey, and Dominique Fober. Jack audio server
-   for multi-processor machines. In <span 
-class="ecti-1000">International Computer Music Conference</span>,
-   pages 1&#x2013;4, 2005.
+   <h2 class='likechapterHead' id='bibliography'><a id='x1-20000.1'></a>Bibliography</h2>
+   <div class='thebibliography'>
+   <p class='bibitem'><span class='biblabel'>
+ [1]<span class='bibsp'>   </span></span><a id='Xletz2005jack'></a>Stéphane Letz, Yann Orlarey, and Dominique Fober. Jack audio server
+   for multi-processor machines. In <span class='ecti-1000'>International Computer Music Conference</span>,
+   pages 1–4, 2005.
 </p>
    </div>
-<a 
- id="Q1-1-4"></a>
+<p id='references'><a id='Q1-1-4'></a>
     
-</body></html> 
-
-                                                                  
-
-
+</p></body> 
+</html>
